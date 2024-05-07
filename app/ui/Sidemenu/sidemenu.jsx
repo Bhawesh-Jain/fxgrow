@@ -3,7 +3,7 @@ import Link from "next/link"
 const Sidemenu = ({isOpen}) => {
    return (
       <div className="">
-        {isOpen && <div className="fixed top-0 right-0 h-full w-64 bg-gray-200 flex flex-col ">
+        {isOpen && <div className="fixed top-15 right-0 h-full w-64 bg-gray-200 flex flex-col ">
 
         <Link href="">Home</Link>
         <Link href="">Login Your Account</Link>
