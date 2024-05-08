@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Loan */}
+      {/* Contact Us */}
       <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center ">
         <h1 className="text-2xl md:text-3xl	font-bold">Contact Us</h1>
         <span className="w-12 h-1 m-6 rounded-full bg-yellow-600"></span>
