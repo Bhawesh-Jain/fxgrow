@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <Navbar className="" showMenu={false} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Navbar className="" showMenu={true} isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex-grow">
         <Sidemenu isOpen={isOpen} />
@@ -26,8 +26,8 @@ export default function Home() {
           <p className="my-5 md:my-10 text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio amet maiores dicta accusamus totam iusto quaerat esse fugit ea praesentium ut! Obcaecati, ullam incidunt provident quo cum animi unde error doloremque illum rem pariatur sunt excepturi necessitatibus distinctio illo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, pariatur esse assumenda repellendus eos, natus maiores iusto commodi velit facilis voluptate non nulla at nostrum odit molestias recusandae eveniet quo.</p>
 
           <div className="flex flex-col">
-            <PrimaryButton btnText="Login" link={"/"}/>
-            <PrimaryButton btnText="Create Account" link={"/"}/>
+            <PrimaryButton btnText="Login" link={"/"} />
+            <PrimaryButton btnText="Create Account" link={"/"} />
           </div>
 
         </div>
@@ -68,9 +68,7 @@ export default function Home() {
         <h1 className="text-2xl md:text-3xl	font-bold">Our Company Services</h1>
         <span className="w-32 h-1 m-6 rounded-full bg-yellow-600"></span>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sit deleniti. Magnam autem eius et aut laboriosam, totam consequuntur aspernatur!</p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-flow-row gap-5 sm:gap-6">
-          <Service />
-          <Service />
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 sm:gap-6">
           <Service />
           <Service />
           <Service />
@@ -81,20 +79,54 @@ export default function Home() {
       </div>
 
       {/* Loan */}
-      <div className="text-center p-5 md:p-14 lg:px-32 lg:py-24 flex flex-col items-center	text-white bg-black">
-        <h1 className="text-2xl md:text-3xl	font-bold">Our Company Services</h1>
-        <span className="w-32 h-1 m-6 rounded-full bg-yellow-600"></span>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sit deleniti. Magnam autem eius et aut laboriosam, totam consequuntur aspernatur!</p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-flow-row gap-5 sm:gap-6">
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
+      <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center ">
+        <h1 className="text-2xl md:text-3xl	font-bold">Contact Us</h1>
+        <span className="w-12 h-1 m-6 rounded-full bg-yellow-600"></span>
+        <p className="text-sm text-center">Send us a message and we'll respond as soon as possible!</p>
+
+        <div className="p-4 w-full">
+          <form class="md:mx-20">
+            <div className="grid gap-6 md:grid-cols-2 mb-5">
+
+              <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+              </div>
+
+              <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your name</label>
+                <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+              </div>
+
+              <div>
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Your phone</label>
+                <input type="text" maxLength="10" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+              </div>
+
+              <div>
+                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Subject</label>
+                <input type="text" id="subject" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+              </div>
+
+            </div>
+
+            <div>
+                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                <textarea type="text" id="subject" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+              </div>
+
+            <div class="flex items-start my-5">
+              <div class="flex items-center h-5">
+                <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required />
+              </div>
+
+              <label for="terms" class="ms-2 text-sm font-medium text-gray-900 ">I agree with the <a href="#" class="text-blue-600 hover:underline ">terms and conditions</a></label>
+            </div>
+
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Submit</button>
+          </form>
         </div>
+
       </div>
 
     </div>
