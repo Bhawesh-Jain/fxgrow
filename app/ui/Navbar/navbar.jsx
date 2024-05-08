@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { MdArrowBack, MdFlipToBack, MdMenu, MdPerson } from 'react-icons/md';
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const Navbar = ({ showMenu, isOpen, setIsOpen }) => {
 
    const handleMenuClick = () => {
       setIsOpen(!isOpen)
@@ -25,9 +25,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
                   <span className="text-gray-500">Growell your trading</span>
                </div>
             </div>
-            <div className="cursor-pointer"  onClick={handleMenuClick}>
+            {showMenu && <div className="cursor-pointer"  onClick={handleMenuClick}>
                {isOpen && <MdArrowBack size={25} /> || <MdPerson size={25}/>}
-            </div>
+            </div>}
          </div>
       </div>
    )
