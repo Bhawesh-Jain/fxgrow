@@ -5,7 +5,7 @@ const PrimaryButton = ({ btnText, link }) => {
         <div>
             <button className="w-4/5 md:w-3/5 lg:w-3/6 my-3 px-5 py-4 bg-white border border-solid border-gray-300 rounded-tl-3xl rounded-br-3xl shadow-lg ">
                 <Link href={link}>
-                    {btnText}
+                    <span className="select-none selection:no-underline">{btnText}</span>
                 </Link>
             </button>
         </div>
