@@ -6,7 +6,7 @@ const Navmenuitem = ({ item }) => {
   const pathname = usePathname()
 
   return (
-    <Link href={item.link}>
+    <Link className={`${item.mobile === false && "hidden md:inline"}`} href={item.link}>
       <div className={`${"flex flex-col justify-center items-center py-2 bg-gray-50 md:flex-row md:justify-normal md:gap-2.5 md:p-5"} 
         ${pathname === item.link && "bg-gray-200 duration-200 text-blue-500 filter"}`}>
 

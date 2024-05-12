@@ -4,7 +4,7 @@ import Navbar from "../ui/Navbar/navbar"
 const Layout = ({ children }) => {
   return (
     <div className="">
-      <Navbar />
+      <Navbar  />
       <Navmenu />
       <div className="absolute top-14 md:left-1/3 lg:left-[16.666667%] ">
         {children}
