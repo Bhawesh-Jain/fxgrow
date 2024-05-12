@@ -8,7 +8,7 @@ const Navbar = ({ showMenu, isOpen, setIsOpen }) => {
    }
 
    return (
-      <div>
+      <div className="fixed w-full h-14 bg-white">
          <div className="flex flex-row items-center justify-between px-4 py-3 h-14">
             <div className="flex flex-row cursor-pointer select-none">
                <div className="color=#f53131">

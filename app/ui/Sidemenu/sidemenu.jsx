@@ -35,20 +35,11 @@ const Sidemenu = ({ isOpen }) => {
    ]
 
    return (
-      <div className="">
+      <div className="h-full overflow-y-auto bg-gray-500 w-60 md:w-72 lg:w-80 fixed top-14 left-0 flex flex-col">
          {
-            isOpen &&
-            <div className="">
-               <div className="h-screen overflow-y-auto absolute bg-gray-500 w-60 md:w-72 lg:w-80 top-14 left-0 flex flex-col">
-
-               {
-                  data.map( item => (
-                     <MenuItem item={item}/>
-                  ))
-               }
-
-               </div>
-            </div>
+            data.map(item => (
+               <MenuItem item={item} />
+            ))
          }
       </div>
    )
