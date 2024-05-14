@@ -2,7 +2,7 @@ import { MdCallReceived } from "react-icons/md";
 
 const Transaction = ({ item }) => {
    return (
-      <div className="py-2 text-xs border-b-2 border-gray-50">
+      <div className="py-2 text-xs border-b-2 border-gray-100">
 
          <div className="flex flex-row justify-between">
 
