@@ -1,12 +1,10 @@
 import Navmenu from "../ui/NavMenu/navmenu"
-import Navbar from "../ui/Navbar/navbar"
 
 const Layout = ({ children }) => {
   return (
     <div className="">
-      <Navbar link="/" />
       <Navmenu />
-      <div className="absolute top-14 md:left-1/3 lg:left-[16.666667%] ">
+      <div className="md:ml-[33.333337%] lg:ml-[16.666667%] md:py-0 py-12">
         {children}
       </div>
     </div>
