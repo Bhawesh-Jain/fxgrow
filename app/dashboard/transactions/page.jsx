@@ -1,6 +1,14 @@
+import Transaction from "@/app/ui/Transaction/transaction"
+
 const Transactions = () => {
    return (
-      <div>Transactions</div>
+      <div>
+         <Transaction />
+         <Transaction />
+         <Transaction />
+         <Transaction />
+         <Transaction />
+      </div>
    )
 }
 

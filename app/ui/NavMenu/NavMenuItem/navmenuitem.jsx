@@ -7,8 +7,8 @@ const Navmenuitem = ({ item }) => {
 
   return (
     <Link className={`${item.mobile === false && "hidden md:inline"}`} href={item.link}>
-      <div className={`${"flex flex-col justify-center items-center py-2 bg-gray-50 md:flex-row md:justify-normal md:gap-2.5 md:p-5"} 
-        ${pathname === item.link && "bg-gray-200 duration-200 text-blue-500 filter"}`}>
+      <div className={`${"flex flex-col justify-center items-center py-2 md:flex-row md:justify-normal md:gap-2.5 md:p-4 md:m-2 md:rounded-lg"} 
+        ${pathname === item.link && "bg-gray-100 duration-200 text-blue-500 filter "}`}>
 
         <div>
           <item.icon className="" size={item.size} />

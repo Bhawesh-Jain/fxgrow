@@ -1,6 +1,19 @@
+import Header from "../ui/header/header"
+
 const Dashboard = () => {
    return (
-      <div className="h-screen">Dashboard</div>
+      <div className="">
+
+         <div>
+
+            <div className="">
+               
+            </div>
+
+         </div>
+
+
+      </div>
    )
 }
 

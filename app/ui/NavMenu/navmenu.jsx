@@ -47,13 +47,13 @@ const Navmenu = () => {
 
     return (
         <div className="
-            grid grid-cols-4 grid-rows-1 fixed w-full bottom-0 text-xs bg-gray-50 select-none
+            grid grid-cols-4 grid-rows-1 fixed w-full bottom-0 text-xs  select-none
             md:bottom-0 md:top-14 md:left-0 md:w-2/6 md:h-screen md:flex md:flex-col md:text-sm
             lg:w-1/6
         ">
             {
                 list.map(item => (
-                    <Navmenuitem item={item} />
+                    <Navmenuitem key={item.title} item={item} />
                 ))
             }
         </div>
