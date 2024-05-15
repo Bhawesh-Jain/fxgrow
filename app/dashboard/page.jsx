@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Header from "../ui/header/header"
 import { IoIosArrowUp } from "react-icons/io";
+import Slider from "../ui/Slider/slider";
 
 const Dashboard = () => {
    return (
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center pb-10">
 
          <div className="mx-3 text-3xl my-5 flex flex-col gap-2 justify-center items-center">
             <h2 className="font-bold">Cross The Road</h2>
@@ -106,7 +107,9 @@ const Dashboard = () => {
 
          <span className="text-red-600 font-bold text-2xl mb-5">Live Market</span>
 
+         <Slider />
 
+         
       </div>
    )
 }
