@@ -1,28 +1,21 @@
-import Image from "next/image";
-import { motion } from "framer-motion"
+import ServiceItem from "./serviceItem"
 
-const Service = ({ item }) => {
+const Service = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}  >
-            <div className="text-black p-3 border border-solid border-gray-300 rounded-lg bg-white flex flex-col items-center hover:scale-105 transition duration-300">
-                <div className="mt-5">
-                    <Image
-                        src="/ic_trusted.png"
-                        alt=""
-                        width={50}
-                        height={50}
-                    />
-                </div>
-
-                <h1 className="text-center font-bold mt-8 mb-4 text-lg">Service Name</h1>
-
-                <p className="text-center text-sm mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quisquam, error voluptatum quas voluptate mollitia modi impedit pariatur, quidem vitae, dicta ab architecto quasi iste!</p>
+        <div className="text-center p-5 md:p-14 lg:px-32 lg:py-24 flex flex-col items-center text-white bg-black">
+            <h1 className="text-2xl md:text-3xl	font-bold">Our Company Services</h1>
+            <span className="w-32 h-1 m-6 rounded-full bg-yellow-600"></span>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sit deleniti. Magnam autem eius et aut laboriosam, totam consequuntur aspernatur!</p>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 sm:gap-6">
+                <ServiceItem />
+                <ServiceItem />
+                <ServiceItem />
+                <ServiceItem />
+                <ServiceItem />
+                <ServiceItem />
             </div>
-        </motion.div >
-    );
-};
+        </div>
+    )
+}
 
-export default Service;
+export default Service

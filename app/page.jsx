@@ -2,12 +2,10 @@
 import { useState } from "react";
 import Navbar from "./ui/Navbar/navbar";
 import Sidemenu from "./ui/Sidemenu/sidemenu";
-import Link from "next/link";
-import PrimaryButton from "./ui/PrimaryButton/primaryButton";
-import Image from "next/image";
-import Service from "./ui/Service/service";
 import Footer from "./ui/footer/footer";
 import Header from "./ui/header/header";
+import Service from "./ui/Service/service";
+import AboutUs from "./ui/About/aboutus";
 
 export default function Home() {
 
@@ -21,43 +19,11 @@ export default function Home() {
         {isOpen && <Sidemenu isOpen={isOpen} />}
       </div>
 
-      {/* Header */}
       <Header />
 
-      {/* About Us */}
-      <div className="py-6 px-4 md:px-14 lg:px-32 flex flex-col justify-between md:flex-row">
-        <div className="px-3 py-10 md:py-20 md:px-7 lg:px14 w-full md:w-3/6 lg:w-4/6">
-          <h1 className="text-2xl md:text-3xl	font-bold	">About Our Company</h1>
-          <p className="my-5 md:my-10 text-sm md:text-base lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio amet maiores dicta accusamus totam iusto quaerat esse fugit ea praesentium ut! Obcaecati, ullam incidunt provident quo cum animi unde error doloremque illum rem pariatur sunt excepturi necessitatibus distinctio illo! Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p className="my-5 md:my-10 text-sm md:text-base lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio amet maiores dicta accusamus totam iusto quaerat esse fugit ea praesentium ut! Obcaecati.</p>
-          <p className="my-5 md:my-10 text-sm md:text-base lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio amet maiores dicta accusamus totam iusto quaerat esse fugit ea praesentium ut! Obcaecati, ullam incidunt provident quo </p>
-        </div>
+      <AboutUs />
 
-        <div className="relative w-full md:w-3/6 lg:w-2/6 p-10 my-5 h-60 md:h-auto md:my-5 lg:my-10">
-          <Image
-            className="md:p-14"
-            src="/about.png"
-            alt=""
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      </div>
-
-      {/* Service */}
-      <div className="text-center p-5 md:p-14 lg:px-32 lg:py-24 flex flex-col items-center	text-white bg-black">
-        <h1 className="text-2xl md:text-3xl	font-bold">Our Company Services</h1>
-        <span className="w-32 h-1 m-6 rounded-full bg-yellow-600"></span>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sit deleniti. Magnam autem eius et aut laboriosam, totam consequuntur aspernatur!</p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 sm:gap-6">
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-          <Service />
-        </div>
-      </div>
+      <Service />
 
       {/* Contact Us */}
       <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center ">

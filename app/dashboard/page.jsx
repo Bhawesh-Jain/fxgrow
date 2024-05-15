@@ -2,6 +2,9 @@ import Link from "next/link";
 import Header from "../ui/header/header"
 import { IoIosArrowUp } from "react-icons/io";
 import Slider from "../ui/Slider/slider";
+import Image from "next/image";
+import AboutUs from "../ui/About/aboutus";
+import Service from "../ui/Service/service";
 
 const Dashboard = () => {
    return (
@@ -109,7 +112,9 @@ const Dashboard = () => {
 
          <Slider />
 
-         
+         <AboutUs />
+
+         <Service />
       </div>
    )
 }
