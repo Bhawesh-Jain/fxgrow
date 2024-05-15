@@ -56,7 +56,7 @@ const Dashboard = () => {
 
             </div>
 
-            <div className="flex flex-row justify-between mx-3  md:mx-10 text-white text-center gap-6">
+            <div className="flex flex-row justify-between mx-3 md:mx-10 text-white text-center gap-6">
                <Link className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/">
                   Deposit
                </Link>
@@ -67,9 +67,9 @@ const Dashboard = () => {
             </div>
 
             <div className="flex flex-col items-center m-3 md:m-10">
-               <h2 className="font-bold text-lg">Live Order</h2>
+               <h2 className="font-bold text-lg mt-4 md:mt-0">Live Order</h2>
 
-               <div className="flex flex-wrap w-full justify-around text-white bg-slate-800 rounded-lg mt-8 p-6 gap-5 xl:gap-0">
+               <div className="flex flex-wrap w-full justify-around text-white bg-slate-800 rounded-lg mt-4 md:mt-8 p-6 gap-5 xl:gap-0">
 
                   <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
                      <h3 className="font-medium">Trade Amount</h3>
@@ -100,8 +100,12 @@ const Dashboard = () => {
                </div>
             </div>
 
-
          </div>
+
+         <p className="text-base mt-4 my-5 text-red-500">*********</p>
+
+         <span className="text-red-600 font-bold">To Success</span>
+
 
       </div>
    )
