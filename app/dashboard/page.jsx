@@ -66,9 +66,42 @@ const Dashboard = () => {
 
             </div>
 
+            <div className="flex flex-col items-center m-3 md:m-10">
+               <h2 className="font-bold text-lg">Live Order</h2>
+
+               <div className="flex flex-wrap w-full justify-around text-white bg-slate-800 rounded-lg mt-8 p-6 gap-5 xl:gap-0">
+
+                  <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
+                     <h3 className="font-medium">Trade Amount</h3>
+                     <span>5000</span>
+                  </div>
+
+                  <span className="h-14 w-0.5 bg-gray-400 my-auto" />
+
+                  <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
+                     <h3 className="font-medium">Currency</h3>
+                     <span>INR</span>
+                  </div>
+
+                  <span className="h-14 w-0.5 bg-gray-400 my-auto hidden xl:block" />
+
+                  <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
+                     <h3 className="font-medium">Quantity</h3>
+                     <span>30</span>
+                  </div>
+
+                  <span className="h-14 w-0.5 bg-gray-400 my-auto" />
+
+                  <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
+                     <h3 className="font-medium">Buy Price</h3>
+                     <span>5000</span>
+                  </div>
+
+               </div>
+            </div>
+
+
          </div>
-
-
 
       </div>
    )

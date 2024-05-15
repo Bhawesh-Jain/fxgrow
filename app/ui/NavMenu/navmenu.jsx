@@ -24,7 +24,7 @@ const Navmenu = () => {
             link: "/dashboard/transactions"
         },
         {
-            title: "History",
+            title: "Order History",
             icon: icons.MdHistory,
             mobile: true,
             size: bottomIconSize,
