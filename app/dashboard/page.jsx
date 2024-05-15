@@ -8,7 +8,7 @@ import Service from "../ui/Service/service";
 
 const Dashboard = () => {
    return (
-      <div className="flex flex-col justify-center items-center pb-10">
+      <div className="flex flex-col justify-center items-center pb-10 select-none">
 
          <div className="mx-3 text-3xl my-5 flex flex-col gap-2 justify-center items-center">
             <h2 className="font-bold">Cross The Road</h2>

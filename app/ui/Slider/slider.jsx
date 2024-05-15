@@ -4,7 +4,7 @@ import SliderItem from "./sliderItem";
 export default function Slider() {
     return (
         <div className="w-full">
-            <Marquee speed={30}>
+            <Marquee speed={60}>
                 <SliderItem />
                 <SliderItem />
                 <SliderItem />
