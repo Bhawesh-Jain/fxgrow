@@ -72,7 +72,7 @@ const Dashboard = () => {
                <div className="flex flex-wrap w-full justify-around text-sm md:text-base text-white bg-slate-800 rounded-lg mt-4 md:mt-8 p-6 gap-5 xl:gap-0">
 
                   <div className="flex flex-col gap-5 items-center w-1/3 xl:w-auto">
-                     <h3 className="font-medium">Trade Amount</h3>
+                     <h3 className="font-medium">Amount</h3>
                      <span>5000</span>
                   </div>
 
@@ -104,7 +104,7 @@ const Dashboard = () => {
 
          <p className="text-base mt-4 my-5 text-red-500">*********</p>
 
-         <span className="text-red-600 font-bold">To Success</span>
+         <span className="text-red-600 font-bold text-2xl mb-5">Live Market</span>
 
 
       </div>
