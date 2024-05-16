@@ -3,6 +3,7 @@ import * as icons from "react-icons/md"
 import Navmenuitem from "./NavMenuItem/navmenuitem"
 import Image from "next/image"
 import Link from "next/link"
+import { logout } from "@/libs/actions"
 
 const Navmenu = () => {
 
@@ -36,16 +37,12 @@ const Navmenu = () => {
             mobile: true,
             size: bottomIconSize,
             link: "/dashboard/profile"
-        },
-        {
-            title: "Logout",
-            icon: icons.MdLogout,
-            size: bottomIconSize,
-            mobile: false,
-            link: "/dashboard/logout"
         }
-
     ]
+
+    const logoutClick = () => {
+        logout()
+    }
 
     return (
         <div className=" w-full md:w-2/6 lg:w-1/6 z-40 bg-white">
@@ -79,6 +76,20 @@ const Navmenu = () => {
                         <Navmenuitem key={item.title} item={item} />
                     ))
                 }
+
+                <button className="hidden md:block" onClick={logoutClick}>
+                    <div className={`${"flex flex-col justify-center items-center py-2 md:flex-row md:justify-normal md:gap-2.5 md:p-4 md:m-2 md:rounded-lg"} `}>
+
+                        <div>
+                            <icons.MdLogout className="" size={16} />
+                        </div>
+
+                        <span className="mt-2 md:m-0">
+                            Logout
+                        </span>
+
+                    </div>
+                </button>
             </div>
 
         </div>

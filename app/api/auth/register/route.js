@@ -5,9 +5,6 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
     const res = await request.json();
 
-    console.log("api");
-    console.log(res);
-
     await connectMongoDb();
 
     var message = "Invalid User"
@@ -15,7 +12,6 @@ export async function POST(request) {
     var data
 
     const exists = await User.exists({ email: res["email"]})
-    console.log(exists);
     if (exists) {
         message = "Email Already Exits!"
         status = false

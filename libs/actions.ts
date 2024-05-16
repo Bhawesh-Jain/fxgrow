@@ -18,14 +18,14 @@ export const login = async (
 ) => {
   const session = await getSession();
 
-  const formEmail = body["email"] as string
+  const name = body["name"] as string
   const id = body["_id"] as string
 
   session.remember = true
 
   session.isLoggedIn = true;
   session.userId = id;
-  session.userName = formEmail;
+  session.userName = name;
   
   await session.save()
 

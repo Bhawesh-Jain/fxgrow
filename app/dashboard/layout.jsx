@@ -1,6 +1,14 @@
+import { redirect } from "next/navigation"
 import Navmenu from "../ui/NavMenu/navmenu"
+import { getSession } from "@/libs/actions"
 
-const Layout = ({ children }) => {
+const Layout = async ({ children }) => {
+  const session = await getSession()
+
+  if(!session.isLoggedIn) {
+    redirect('/login')
+  }
+
   return (
     <div className="">
       <Navmenu />

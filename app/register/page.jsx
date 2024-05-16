@@ -49,7 +49,6 @@ const Register = () => {
       if (res.ok) {
         const body = await res.json();
 
-        console.log(body);
         if (body.status) {
           setPopMsg(body.message);
           setPopBtnMsg("Go To Home")
