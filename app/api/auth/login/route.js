@@ -15,11 +15,16 @@ export async function POST(request) {
 
     if (user) {
         if (user.toObject()["password"] === res["password"]) {
-            message = "Login Successful"
-            status = true
-            data = user.toObject()
+            if (user.toObject()["status"]) {
+                message = "Verification Pending!"
+                status = false
+            } else {
+                message = "Login Successful"
+                status = true
+                data = user.toObject()
 
-            delete data["password"];
+                delete data["password"];
+            }
         } else {
             message = "Invalid Password!"
             status = false
