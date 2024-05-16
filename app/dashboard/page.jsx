@@ -61,10 +61,10 @@ const Dashboard = () => {
             </div>
 
             <div className="flex flex-row justify-between mx-3 md:mx-10 text-white text-center gap-6">
-               <Link className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/">
+               <Link className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
                   Deposit
                </Link>
-               <Link className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/">
+               <Link className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
                   Withdraw
                </Link>
 

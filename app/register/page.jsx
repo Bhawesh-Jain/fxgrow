@@ -43,7 +43,7 @@ const Register = () => {
 
                 <div className="w-full">
                   <label for="pan" className="block mb-2 text-sm font-medium text-gray-900">Pan</label>
-                  <input type="text"name="pan" id="pan" className="bg-gray-50 uppercase border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Enter pan number" required="" />
+                  <input type="text" name="pan" id="pan" className="bg-gray-50 uppercase border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Enter pan number" required="" />
                 </div>
 
                 <div>
@@ -78,7 +78,7 @@ const Register = () => {
 
                 <div className="w-full">
                   <label for="ifsc-code" className="block mb-2 text-sm font-medium text-gray-900">IFSC Code</label>
-                  <input type="text"  name="ifsc-code" id="ifsc-code" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Enter ifsc code" required="" />
+                  <input type="text" name="ifsc-code" id="ifsc-code" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Enter ifsc code" required="" />
                 </div>
 
                 <div className="sm:col-span-2">

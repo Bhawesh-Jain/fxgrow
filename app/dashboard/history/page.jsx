@@ -32,7 +32,7 @@ const History = () => {
                <tbody>
                   {
                      list.map(item => (
-                        <tr className="border-b">
+                        <tr key={item} className="border-b">
                            <td className="px-6 py-3 border-r">
                               24-{item}-2024
                            </td>

@@ -4,8 +4,8 @@ import "./ui/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "FxGrow",
-  description: "FxGrow Official Website",
+  title: "IForex",
+  description: "IForex Official Website",
 };
 
 export default function RootLayout({ children }) {
