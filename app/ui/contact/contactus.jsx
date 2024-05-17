@@ -1,4 +1,55 @@
+import { useEffect, useRef, useState } from "react";
+
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
+
+
 const ContactUs = () => {
+    const formRef = useRef(null);
+
+    const [msg, setMsg] = useState("");
+
+    useEffect(() => {
+        if (msg && msg.length < 30) {
+          const timer = setTimeout(() => {
+            setMsg('');
+          }, 3000);
+          return () => clearTimeout(timer);
+        }
+      }, [msg])
+
+    const handleForm = async (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target);
+
+        const rawFormData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
+            description: formData.get('description')
+        }
+
+        try {
+            const res = await fetch(`${baseUrl}/api/contact`, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(rawFormData),
+            });
+
+            if (res.ok) {
+                const body = await res.json();
+                setMsg(body.message)
+                if (body.status) {
+                    formRef.current.reset();
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center ">
             <h1 className="text-2xl md:text-3xl	font-bold">Contact Us</h1>
@@ -6,50 +57,90 @@ const ContactUs = () => {
             <p className="text-sm text-center">Send us a message and we'll respond as soon as possible!</p>
 
             <div className="p-4 w-full">
-                <form className="md:mx-20">
+                {msg && msg.length > 0 && <p className="text-base item-center text-center m-3">{msg}</p>}
+                <form ref={formRef} className="md:mx-20" onSubmit={handleForm}>
                     <div className="grid gap-6 md:grid-cols-2 mb-5">
 
                         <div>
                             <label for="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                            <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                placeholder="name@iforex.com"
+                                required />
                         </div>
 
                         <div>
                             <label for="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
-                            <input type="text" id="name" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                placeholder=""
+                                required />
                         </div>
 
                         <div>
                             <label for="phone" className="block mb-2 text-sm font-medium text-gray-900">Your phone</label>
-                            <input type="text" maxLength="10" id="phone" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+                            <input
+                                type="text"
+                                maxLength="10"
+                                name="phone"
+                                id="phone"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                placeholder=""
+                                required />
                         </div>
 
                         <div>
                             <label for="subject" className="block mb-2 text-sm font-medium text-gray-900">Subject</label>
-                            <input type="text" id="subject" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                                placeholder=""
+                                required />
                         </div>
 
                     </div>
 
                     <div>
-                        <label for="subject" className="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                        <textarea type="text" id="subject" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+                        <label for="description" className="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                        <textarea
+                            type="text"
+                            id="description"
+                            name="description"
+                            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            placeholder=""
+                            required />
                     </div>
 
                     <div className="flex items-start my-5">
                         <div className="flex items-center h-5">
-                            <input id="terms" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required />
+                            <input
+                                id="terms"
+                                type="checkbox"
+                                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                                required />
                         </div>
 
                         <label for="terms" className="ms-2 text-sm font-medium text-gray-900 ">I agree with the <a href="#" className="text-blue-600 hover:underline ">terms and conditions</a></label>
                     </div>
 
-                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Submit</button>
+                    <button
+                        type="submit"
+                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                        Submit
+                    </button>
                 </form>
             </div>
 
         </div>
     )
-}
 
+}
 export default ContactUs

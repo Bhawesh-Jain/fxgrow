@@ -15,7 +15,7 @@ export async function POST(request) {
 
     if (user) {
         if (user.toObject()["password"] === res["password"]) {
-            if (user.toObject()["status"]) {
+            if (user.toObject()["status"] === "PENDING") {
                 message = "Verification Pending!"
                 status = false
             } else {
