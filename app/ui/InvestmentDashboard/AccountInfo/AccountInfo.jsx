@@ -47,16 +47,9 @@ const getProfit = (profit) => {
     )
 }
 
-const AccountInfo = async () => {
+const AccountInfo = ({user}) => {
 
-  try {
-    const session = await getSession()
-
-
-    const id = session.userId;
-  
-    const user = await getUserById(id)
-  
+  try {  
     return (
       <div className="bg-slate-800 rounded-lg m-3 md:mx-10 md:my-6 px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-3">
 

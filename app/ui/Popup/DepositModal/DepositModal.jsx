@@ -22,7 +22,7 @@ const DepositModal = ({ session, setModalVis, item }) => {
       userId: session.userId,
       msg: `Deposit request by ${session.userName}` ,
       amount: formData.get('amount'),
-      type: formData.get('Deposit'),
+      type: 'Deposit',
       transactionId: formData.get('number')
     }
 
