@@ -14,7 +14,6 @@ const getOrderById = async (id) => {
     if (res.ok) {
       var body = await res.json()
 
-      console.log(body.status);
       if (body.status) {
         return body.data;
       }
@@ -32,8 +31,6 @@ const LiveOrder = async () => {
     const id = session.userId;
 
     var data = await getOrderById(id)
-
-    console.log(data);
 
     return (
       <div className="flex flex-wrap w-full justify-around text-sm md:text-base text-white bg-slate-800 rounded-lg mt-4 md:mt-8 p-6 gap-5 xl:gap-0">
@@ -69,10 +66,9 @@ const LiveOrder = async () => {
     )
 
   } catch (error) {
-    console.log(error);
     return (
       <>
-        <p className="text-center p-10">No Ongoing Currently</p>
+        <p className="text-center p-10">No Ongoing Trade Currently</p>
       </>
     )
   }
