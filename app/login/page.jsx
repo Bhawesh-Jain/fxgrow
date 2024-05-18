@@ -31,9 +31,8 @@ const Login = () => {
          if (res.ok) {
             const body = await res.json();
 
-            console.log(body);
             if (body.status) {
-               login(body)
+               login(body.data)
             } else {
                setErrorMsg(body.message)
             }

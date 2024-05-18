@@ -7,10 +7,6 @@ import { redirect } from "next/navigation"
 export const getSession = async () => {
   const session = await getIronSession<SessionData>(cookies(), sessionOptions);
 
-  if (!session.isLoggedIn) {
-    session.isLoggedIn = defaultSession.isLoggedIn;
-  }
-
   return session;
 }
 export const login = async (
@@ -20,6 +16,7 @@ export const login = async (
 
   const name = body["name"] as string
   const id = body["_id"] as string
+  
 
   session.remember = true
 
