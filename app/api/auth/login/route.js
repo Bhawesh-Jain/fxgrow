@@ -13,9 +13,11 @@ export async function POST(request) {
 
     const user = await User.findOne({ email: res["email"] })
 
+    console.log(user);
+    
     if (user) {
         if (user.toObject()["password"] === res["password"]) {
-            if (user.toObject()["status"] === "PENDING") {
+            if (user.toObject()["status"] === "Pending") {
                 message = "Verification Pending!"
                 status = false
             } else {

@@ -1,4 +1,5 @@
 import connectMongoDb from "@/libs/mongodb";
+import Order from "@/models/Order";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
 
@@ -13,10 +14,10 @@ export async function GET(request, { params }) {
   var message = "Request Failed"
   var status = false
 
-  var data = await User.findById(id);
+  var data = await Order.findOne({userId: id, status: "LIVE"});
 
   if (data) {
-      message = "Found User"
+      message = "Found Trade"
       status = true
   }
 

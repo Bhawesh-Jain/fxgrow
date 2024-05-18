@@ -1,5 +1,5 @@
 
-import { getSession, logout } from "@/libs/actions";
+import { getSession } from "@/libs/actions";
 import { IoIosArrowUp } from "react-icons/io"
 
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
@@ -16,7 +16,7 @@ const getUserById = async (id) => {
 
       if (body.status) {
         return body.data;
-      } 
+      }
     }
   } catch (error) {
     console.log(error);
@@ -48,18 +48,15 @@ const getProfit = (profit) => {
 }
 
 const AccountInfo = async () => {
-  const session = await getSession()
-
-  console.log(session);
-
-  const id = session.userId;
-  console.log(id);
-
-  const user = await getUserById(id)
 
   try {
+    const session = await getSession()
 
 
+    const id = session.userId;
+  
+    const user = await getUserById(id)
+  
     return (
       <div className="bg-slate-800 rounded-lg m-3 md:mx-10 md:my-6 px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-3">
 
@@ -76,7 +73,7 @@ const AccountInfo = async () => {
 
         </div>
 
-        <div className="bg-slate-600 rounded-lg mx-4 my-4">
+        <div className="bg-slate-600 rounded-lg mx-2 my-4">
 
           <div className="flex flex-row justify-around text-white px-5 py-5 text-sm">
             <div className="flex flex-col items-start md:items-center gap-2 w-1/2">
