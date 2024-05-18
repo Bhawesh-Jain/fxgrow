@@ -6,7 +6,7 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 
 const getOrderById = async (id) => {
   try {
-    const res = await fetch(`${baseUrl}/api/dashboard/trade/${id}`, {
+    const res = await fetch(`${baseUrl}/api/dashboard/trade/${id}?status=LIVE`, {
       method: "GET",
       cache: "no-store"
     });

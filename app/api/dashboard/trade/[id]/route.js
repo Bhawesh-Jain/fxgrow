@@ -7,13 +7,19 @@ import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
   const { id } = params
+  const tstatus  =  request.nextUrl.searchParams.get("status")
 
   await connectMongoDb()
 
   var message = "Request Failed"
   var status = false
+  var data 
 
-  var data = await Order.findOne({userId: id, status: "LIVE"});
+  if (tstatus === "LIVE") {
+    data = await Order.findOne({userId: id, status: tstatus});
+  } else {
+    data = await Order.find({userId: id, status: tstatus});
+  }
 
   if (data) {
       message = "Found Trade"
