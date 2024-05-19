@@ -58,8 +58,8 @@ const Navmenu = () => {
                                 className="rounded-full"
                             />
                         </div>
-                        <div className="flex flex-col text-xs ml-2">
-                            <span className="text-red-500 text-sm">IForex</span>
+                        <div className="flex flex-col text-xs ml-2 font-bold">
+                            <span className="text-blue-500 text-sm">IForex</span>
                             <span className="text-gray-500">Your Trading Partner</span>
                         </div>
                     </div>

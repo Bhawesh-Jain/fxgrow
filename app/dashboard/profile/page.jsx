@@ -30,14 +30,14 @@ const Profile = async () => {
 
 
    return (
-      <div className="grid md:grid-cols-1 py-20 md:p-10 text-sm gap-4">
+      <div className="grid w-full p-5 md:p-10 text-sm gap-4">
 
          <div className="col-span-2 flex flex-row gap-3 items-center text-lg font-bold">
             <RiUserFill />
             <h2>Account Info</h2>
          </div>
 
-         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+         <div className="grid gap-4 sm:grid-cols-2 w-full sm:gap-6">
             <div className="sm:col-span-2">
                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Email</label>
                <input defaultValue={user.email} disabled type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Your email" required />

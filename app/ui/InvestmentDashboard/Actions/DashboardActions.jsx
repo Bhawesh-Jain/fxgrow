@@ -6,6 +6,7 @@ import WithdrawModal from "../../Popup/WithdrawModal/WithdrawModal";
 import AddLoanModal from "../../Popup/AddLoanModal/AddLoanModal";
 import AcceptLoanModal from "../../Popup/AcceptLoanModal/AcceptLoanModal";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const DashboardActions = ({ session, paymentItems, user, loan }) => {
   const router = useRouter()
@@ -75,17 +76,17 @@ const DashboardActions = ({ session, paymentItems, user, loan }) => {
 
   return (
     <div className="grid grid-cols-2 justify-between mx-3 md:mx-10 text-white text-center gap-6">
-      <button onClick={openDeposit} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
+      <button onClick={openDeposit} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" >
         Deposit
       </button>
-      <button onClick={openWithdraw} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
+      <button onClick={openWithdraw} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer">
         Withdraw
       </button>
 
-      {/* <button onClick={openDeposit} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
+      <Link href="./dashboard/statement" className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer">
         Statement
-      </button>*/}
-      <button onClick={loanHandle} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
+      </Link>
+      <button onClick={loanHandle} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer">
         {!requested && loanBtn || "Loan Requested"}
       </button>
 

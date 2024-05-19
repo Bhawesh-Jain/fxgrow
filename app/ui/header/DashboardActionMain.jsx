@@ -5,7 +5,7 @@ const DashboardActionMain = async () => {
   const session = await getSession()
 
   return (
-    <div>
+    <div className="text-black">
       {session.isLoggedIn &&
         <div className="flex flex-col">
           <PrimaryButton btnText="Dashboard" link={"/dashboard"} />
