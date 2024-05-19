@@ -1,12 +1,17 @@
-import Link from "next/link"
 import MenuItem from "./menuItem/menuItem"
 
-const Sidemenu = ({ isOpen }) => {
+const Sidemenu = ({isLoggedIn}) => {
+
+   let homeLink = "/"
+
+   if (isLoggedIn) {
+      homeLink = "/dashboard"
+   }
 
    let data = [
       {
          title: "Home",
-         link: "/",
+         link: homeLink,
       },
       {
          title: "Login",
@@ -18,19 +23,7 @@ const Sidemenu = ({ isOpen }) => {
       },
       {
          title: "Loan",
-         link: "/loan",
-      },
-      {
-         title: "About Us",
-         link: "/about",
-      },
-      {
-         title: "Contact Us",
-         link: "/contact",
-      },
-      {
-         title: "Terms & Conditions",
-         link: "/terms",
+         link: "/dashboard",
       },
    ]
 
@@ -38,7 +31,7 @@ const Sidemenu = ({ isOpen }) => {
       <div className="h-full overflow-y-auto bg-gray-500 w-60 md:w-72 lg:w-80 fixed top-14 left-0 flex flex-col">
          {
             data.map(item => (
-               <MenuItem item={item} />
+               <MenuItem key={item.title} item={item} />
             ))
          }
       </div>

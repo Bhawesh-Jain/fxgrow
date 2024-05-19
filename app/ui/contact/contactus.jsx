@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
@@ -51,7 +53,7 @@ const ContactUs = () => {
     }
 
     return (
-        <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center ">
+        <div className="p-5 md:p-6 lg:px-10 lg:py-14 flex flex-col items-center w-full">
             <h1 className="text-2xl md:text-3xl	font-bold">Contact Us</h1>
             <span className="w-12 h-1 m-6 rounded-full bg-yellow-600" />
             <p className="text-sm text-center">Send us a message and we'll respond as soon as possible!</p>
@@ -62,7 +64,7 @@ const ContactUs = () => {
                     <div className="grid gap-6 md:grid-cols-2 mb-5">
 
                         <div>
-                            <label for="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                             <input
                                 type="email"
                                 id="email"
@@ -73,7 +75,7 @@ const ContactUs = () => {
                         </div>
 
                         <div>
-                            <label for="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
+                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
                             <input
                                 type="text"
                                 id="name"
@@ -84,7 +86,7 @@ const ContactUs = () => {
                         </div>
 
                         <div>
-                            <label for="phone" className="block mb-2 text-sm font-medium text-gray-900">Your phone</label>
+                            <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900">Your phone</label>
                             <input
                                 type="text"
                                 maxLength="10"
@@ -96,7 +98,7 @@ const ContactUs = () => {
                         </div>
 
                         <div>
-                            <label for="subject" className="block mb-2 text-sm font-medium text-gray-900">Subject</label>
+                            <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900">Subject</label>
                             <input
                                 type="text"
                                 id="subject"
@@ -109,7 +111,7 @@ const ContactUs = () => {
                     </div>
 
                     <div>
-                        <label for="description" className="block mb-2 text-sm font-medium text-gray-900">Description</label>
+                        <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900">Description</label>
                         <textarea
                             type="text"
                             id="description"
@@ -128,7 +130,7 @@ const ContactUs = () => {
                                 required />
                         </div>
 
-                        <label for="terms" className="ms-2 text-sm font-medium text-gray-900 ">I agree with the <a href="#" className="text-blue-600 hover:underline ">terms and conditions</a></label>
+                        <label htmlFor="terms" className="ms-2 text-sm font-medium text-gray-900 ">I agree with the <a href="#" className="text-blue-600 hover:underline ">terms and conditions</a></label>
                     </div>
 
                     <button

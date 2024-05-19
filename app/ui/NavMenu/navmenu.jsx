@@ -51,7 +51,7 @@ const Navmenu = () => {
                     <div className="flex flex-row cursor-pointer select-none">
                         <div className="color=#f53131">
                             <Image
-                                src="/logo-icon.jpg"
+                                src="/logo-icon.png"
                                 width={35}
                                 height={35}
                                 alt=""
@@ -59,8 +59,8 @@ const Navmenu = () => {
                             />
                         </div>
                         <div className="flex flex-col text-xs ml-2">
-                            <span className="text-red-500 text-sm">FxGrow</span>
-                            <span className="text-gray-500">Growell your trading</span>
+                            <span className="text-red-500 text-sm">IForex</span>
+                            <span className="text-gray-500">Your Trading Partner</span>
                         </div>
                     </div>
                 </Link>

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import PrimaryButton from "../PrimaryButton/primaryButton"
+import DashboardActionMain from "./DashboardActionMain"
 
 const Header = () => {
   return (
@@ -8,10 +8,7 @@ const Header = () => {
         <h1 className="text-3xl md:text-4xl	font-bold	">Cross The Road <span className="text-yellow-600	">To Success</span></h1>
         <p className="my-5 md:my-10 text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio amet maiores dicta accusamus totam iusto quaerat esse fugit ea praesentium ut! Obcaecati, ullam incidunt provident quo cum animi unde error doloremque illum rem pariatur sunt excepturi necessitatibus distinctio illo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, pariatur esse assumenda repellendus eos, natus maiores iusto commodi velit facilis voluptate non nulla at nostrum odit molestias recusandae eveniet quo.</p>
 
-        <div className="flex flex-col">
-          <PrimaryButton btnText="Login" link={"/login"} />
-          <PrimaryButton btnText="Create Account" link={"/register"} />
-        </div>
+        <DashboardActionMain />
 
       </div>
 

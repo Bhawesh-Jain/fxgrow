@@ -19,13 +19,20 @@ const DashboardActions = ({session, paymentItems, user}) => {
   }
 
   return (
-    <div className="flex flex-row justify-between mx-3 md:mx-10 text-white text-center gap-6">
-      <button onClick={openDeposit} className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
+    <div className="grid grid-cols-2 justify-between mx-3 md:mx-10 text-white text-center gap-6">
+      <button onClick={openDeposit} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
         Deposit
       </button>
-      <button onClick={openWithdraw} className="w-1/2 bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
+      <button onClick={openWithdraw} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
         Withdraw
       </button>
+
+      {/* <button onClick={openDeposit} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/deposit">
+        Statement
+      </button>
+      <button onClick={openWithdraw} className="w-full bg-slate-800 p-5 rounded-lg hover:cursor-pointer" href="/dashboard/wallet">
+        Loan
+      </button> */}
 
       {depositModal && <DepositModal setModalVis={setDepositModal} item={paymentItems} session={session} />}
       {withdrawModal && <WithdrawModal setModalVis={setWithdrawModal} item={user} session={session} />}
