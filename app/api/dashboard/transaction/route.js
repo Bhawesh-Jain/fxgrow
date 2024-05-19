@@ -13,7 +13,7 @@ export async function GET(request) {
   var status = false
   var data
 
-  const req =  await Transaction.find({userId: id});
+  const req =  await Transaction.find({userId: id}).sort({ createdAt: -1 });
 
   if (req) {
       message = "Found Transactions!"

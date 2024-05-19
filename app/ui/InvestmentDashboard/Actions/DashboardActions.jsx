@@ -5,8 +5,10 @@ import DepositModal from "../../Popup/DepositModal/DepositModal";
 import WithdrawModal from "../../Popup/WithdrawModal/WithdrawModal";
 import AddLoanModal from "../../Popup/AddLoanModal/AddLoanModal";
 import AcceptLoanModal from "../../Popup/AcceptLoanModal/AcceptLoanModal";
+import { useRouter } from "next/navigation";
 
 const DashboardActions = ({ session, paymentItems, user, loan }) => {
+  const router = useRouter()
 
   var loanBtn = "Request Loan"
   if (loan && loan.length > 0) {
@@ -24,16 +26,38 @@ const DashboardActions = ({ session, paymentItems, user, loan }) => {
   const [loanModal, setLoanModal] = useState(false);
   const [loanAcceptModal, setLoanAcceptModal] = useState(false);
   const [requested, setRequested] = useState(false);
+  const [updateLoanBtn, setUpdateLoanBtn] = useState(false);
 
   const openDeposit = () => {
     setDepositModal(true)
   }
 
   useEffect(() => {
+    if (updateLoanBtn) {
+      loanBtn = "Loan Granted!"
+    }
+  }, [updateLoanBtn]);
+
+  useEffect(() => {
     if (requested) {
       loanBtn = "Loan Requested"
     }
   }, [requested]);
+
+  useEffect(() => {
+    if (!loanAcceptModal) {
+      router.refresh()
+      if (loan && loan.length > 0) {
+        var status = loan[0].status
+    
+        if (status === "Requested") {
+          loanBtn = "Loan Requested"
+        } else if (status === "Offered") {
+          loanBtn = "Loan Offered"
+        }
+      }
+    }
+  }, [loanAcceptModal]);
 
   const loanHandle = () => {
     if (loanBtn === "Request Loan") {
@@ -68,7 +92,7 @@ const DashboardActions = ({ session, paymentItems, user, loan }) => {
       {depositModal && <DepositModal setModalVis={setDepositModal} item={paymentItems} session={session} />}
       {withdrawModal && <WithdrawModal setModalVis={setWithdrawModal} item={user} session={session} />}
       {loanModal && <AddLoanModal setRequested={setRequested} setModalVis={setLoanModal} item={loan} session={session} />}
-      {loanAcceptModal && <AcceptLoanModal setRequested={setRequested} setModalVis={setLoanAcceptModal} item={loan} session={session} />}
+      {loanAcceptModal && <AcceptLoanModal setUpdateLoanBtn={setUpdateLoanBtn} setRequested={setRequested} setModalVis={setLoanAcceptModal} item={loan} session={session} />}
     </div>
   )
 }

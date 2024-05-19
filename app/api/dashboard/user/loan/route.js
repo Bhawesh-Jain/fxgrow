@@ -13,7 +13,7 @@ export async function GET(request) {
   var message = "Request Failed"
   var status = false
 
-  var data = await Loan.find({status: { $ne: "Completed" } , userId: id});
+  var data = await Loan.find({status: { $nin: ["Completed", "Accepted"] }, userId: id});
 
   if (data) {
       message = "Found Loan"

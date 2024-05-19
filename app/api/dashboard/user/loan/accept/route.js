@@ -1,5 +1,6 @@
 import connectMongoDb from "@/libs/mongodb";
 import Loan from "@/models/Loan";
+import Transaction from "@/models/Transactions";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
 
@@ -7,7 +8,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
 
-  const { userId, loanId, amount } = await request.json()
+  const { userId, loanId, amount, msg } = await request.json()
 
 
 
@@ -27,16 +28,30 @@ export async function POST(request) {
       loanAmount = parseInt(loan)
     }
 
-    loanAmount = loanAmount + amount
+    loanAmount = loanAmount + parseInt(amount)
 
     const updateUser = await User.findByIdAndUpdate(userId, { marketValue, loanAmount })
 
     if (updateUser) {
-      var data = await Loan.findByIdAndUpdate(loanId, { status: "Accepted" });
 
-      if (data) {
-        message = "Loan Requested"
-        status = true
+      var body = {
+        type: "Loan",
+        amount: amount,
+        msg: msg,
+        userId: userId,
+        transactionId: "LOAN-PROVIDED",
+        status: "COMPLETED"
+      }
+
+      var transaction = await Transaction.create(body)
+      if (transaction) {
+
+        var data = await Loan.findByIdAndUpdate(loanId, { status: "Accepted" });
+
+        if (data) {
+          message = "Loan Requested"
+          status = true
+        }
       }
     }
   }
