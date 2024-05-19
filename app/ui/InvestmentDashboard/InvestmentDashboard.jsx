@@ -21,6 +21,21 @@ const getPaymentItems = async () => {
   }
 }
 
+const getLoan = async (id) => {
+  const res = await fetch(`${baseUrl}/api/dashboard/user/loan?id=${id}`, {
+    method: "GET",
+    cache: "no-cache"
+  });
+
+  if (res.ok) {
+    var body = await res.json()
+
+    if (body.status) {
+      return body.data
+    }
+  }
+}
+
 
 const getUserById = async (id) => {
   try {
@@ -47,6 +62,7 @@ const InvestmentDashboard = async () => {
 
   const user = await getUserById(session.userId)
   const paymentItems = await getPaymentItems()
+  const loan = await getLoan(session.userId)
 
   const jsonOb = {
     userId: session.userId,
@@ -57,7 +73,7 @@ const InvestmentDashboard = async () => {
 
       <AccountInfo user={user}/>
 
-      <DashboardActions user={user} session={jsonOb} paymentItems={paymentItems} />
+      <DashboardActions loan={loan} user={user} session={jsonOb} paymentItems={paymentItems} />
 
       <div className="flex flex-col items-center m-3 md:m-10">
         <h2 className="font-bold text-lg mt-4 md:mt-0">Live Order</h2>
