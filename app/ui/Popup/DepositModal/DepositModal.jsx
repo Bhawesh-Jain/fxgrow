@@ -7,6 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 const DepositModal = ({ session, setModalVis, item }) => {
 
   const [errorMsg, setErrorMsg] = useState("");
+  const [btnVis, setBtnVis] = useState(true);
 
 
   const close = () => {
@@ -15,12 +16,12 @@ const DepositModal = ({ session, setModalVis, item }) => {
 
   const submitTrade = async (event) => {
     event.preventDefault();
-
+    setBtnVis(false)
     const formData = new FormData(event.target);
 
     const rawFormData = {
       userId: session.userId,
-      msg: `Deposit request by ${session.userName}` ,
+      msg: `Deposit request by ${session.userName}`,
       amount: formData.get('amount'),
       type: 'Deposit',
       transactionId: formData.get('number')
@@ -44,9 +45,12 @@ const DepositModal = ({ session, setModalVis, item }) => {
           const timer = setTimeout(() => {
             setModalVis(false)
           }, 3000);
+        } else {
+          setBtnVis(true)
         }
       }
     } catch (error) {
+      setBtnVis(true)
       setErrorMsg(error)
     }
   }
@@ -104,11 +108,11 @@ const DepositModal = ({ session, setModalVis, item }) => {
 
           <div className="grid md:grid-cols-2 gap-5 mt-5">
 
-            <button
+            {btnVis && <button
               type="submit"
               className="bg-blue-500 p-3 text-white w-full rounded">
               Submit
-            </button>
+            </button>}
             <button
               onClick={close}
               className="bg-red-500 p-3 text-white w-full rounded">

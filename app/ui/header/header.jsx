@@ -4,7 +4,7 @@ import DashboardActionMain from "./DashboardActionMain"
 const Header = () => {
   return (
     // <div className="  py-10 px-4 md:px-14 lg:px-32 flex flex-col justify-between md:flex-row bg-gradient-to-r from-slate-200 to-gray-200">
-    <div className="bg-[url('/bg-01.jpg')] md:bg-[url('/header-bg.jpg')] bg-no-repeat bg-center bg-cover py-10 px-4 md:px-14 lg:px-32 flex flex-col justify-between md:flex-row text-white">
+    <div className="bg-[url('/header-bg-m.jpg')] md:bg-[url('/header-bg.jpg')] bg-no-repeat bg-center bg-cover pt-10 pb-[34rem] md:py-10 px-4 md:px-14 lg:px-32 flex flex-col justify-between md:flex-row text-white">
       <div className="px-3 py-10 md:py-20 md:pl-7 lg:pl-14 lg:pr-60 w-full md:w-3/6 lg:w-4/6">
         <h1 className="text-3xl md:text-4xl	font-bold	">The Most <span className="text-yellow-600	">Secure Currency</span></h1>
         <h1 className="text-3xl md:text-4xl	font-bold	mt-2"><span className="text-yellow-600	"> Exchanger</span></h1>

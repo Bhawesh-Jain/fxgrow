@@ -12,8 +12,6 @@ export async function POST(request) {
     var data
 
     const user = await User.findOne({ email: res["email"] })
-
-    console.log(user);
     
     if (user) {
         if (user.toObject()["password"] === res["password"]) {

@@ -37,13 +37,13 @@ const Page = async () => {
                         Date
                      </th>
                      <th scope="col" className="px-6 py-3 border-r">
-                        Effect
+                        Credit / Debit
                      </th>
                      <th scope="col" className="px-6 py-3 border-r">
                         Amount
                      </th>
                      <th scope="col" className="px-6 py-3 border-r">
-                        Type
+                        Status
                      </th>
                   </tr>
                </thead>

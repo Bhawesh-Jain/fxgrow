@@ -7,6 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 const WithdrawModal = ({ session, setModalVis, item }) => {
 
   const [errorMsg, setErrorMsg] = useState("");
+  const [btn, setBtn] = useState(true);
 
 
   const close = () => {
@@ -15,7 +16,7 @@ const WithdrawModal = ({ session, setModalVis, item }) => {
 
   const submitTrade = async (event) => {
     event.preventDefault();
-
+    setBtn(false)
     const formData = new FormData(event.target);
 
     var amount = parseInt(formData.get('amount'))
@@ -56,10 +57,13 @@ const WithdrawModal = ({ session, setModalVis, item }) => {
           setTimeout(() => {
             setModalVis(false)
           }, 3000);
+        } else {
+          setBtn(true)
         }
       }
     } catch (error) {
       setErrorMsg(error)
+      setBtn(true)
     }
   }
 
@@ -144,11 +148,18 @@ const WithdrawModal = ({ session, setModalVis, item }) => {
 
           <div className="grid md:grid-cols-2 gap-5 mt-5">
 
-            <button
+            {btn && <button
               type="submit"
               className="bg-blue-500 p-3 text-white w-full rounded">
               Submit
             </button>
+            ||
+
+            <p
+              className="bg-blue-500 p-3 text-white w-full rounded">
+              Processing
+            </p>
+            }
             <button
               onClick={close}
               className="bg-red-500 p-3 text-white w-full rounded">

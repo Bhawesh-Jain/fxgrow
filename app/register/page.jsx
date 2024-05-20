@@ -72,7 +72,7 @@ const Register = () => {
     <>
       <section className="py-10 bg-[url('/gif-3.gif')] bg-no-repeat bg-center bg-cover">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-3/4 lg:py-0 ">
-          <Link href="/" className="font-bold flex gap-4 items-center mb-6 text-6xl font-semibold text-white">
+          <Link href="/" className="font-bold flex gap-4 items-center mb-6 text-6xl text-white">
             <img className="rounded-full w-20 h-20 mr-2" src="/logo-icon.png" alt="logo" />
             <div className="grid">
               IForex
@@ -120,10 +120,10 @@ const Register = () => {
                   <div>
                     <label htmlFor="category" className="block mb-2 text-sm font-medium text-white">Gender</label>
                     <select id="category" name="gender" className="bg-gray-50 bg-opacity-15  border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
-                      <option defaultValue="">Select gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Others">Others</option>
+                      <option className="text-black" defaultValue="">Select gender</option>
+                      <option className="text-black" value="Male">Male</option>
+                      <option className="text-black" value="Female">Female</option>
+                      <option className="text-black" value="Others">Others</option>
                     </select>
                   </div>
 
