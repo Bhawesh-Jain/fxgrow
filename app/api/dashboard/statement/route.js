@@ -32,12 +32,17 @@ export async function GET(request, { params }) {
 
   const formatDate = (date) => {
     const d = new Date(date);
-    const day = String(d.getDate()).padStart(2, '0');
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const year = d.getFullYear();
+    // Convert UTC date to IST
+    const istOffset = 5.5 * 60 * 60 * 1000; // 5.5 hours in milliseconds
+    const istDate = new Date(d.getTime() + istOffset);
+  
+    const day = String(istDate.getDate()).padStart(2, '0');
+    const month = String(istDate.getMonth() + 1).padStart(2, '0');
+    const year = istDate.getFullYear();
+  
     return `${day}-${month}-${year}`;
   };
-
+  
   let totalCredit = 0;
   let totalDebit = 0;
 
