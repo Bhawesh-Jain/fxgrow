@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MdArrowBack, MdFlipToBack, MdMenu, MdPerson } from 'react-icons/md';
 import Sidemenu from "../Sidemenu/sidemenu";
 
-const Navbar = ({ showMenu, link="/" }) => {
+const Navbar = ({ showMenu, link="/"}) => {
 
    const [isOpen, setSidemenu] = useState(false);
 
@@ -37,7 +37,8 @@ const Navbar = ({ showMenu, link="/" }) => {
                {isOpen && <MdArrowBack size={25} /> || <MdPerson size={25} />}
             </div>
             }
-
+            
+         
             {isOpen && <Sidemenu />}
          </div>
       </div>

@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { logout } from "@/libs/actions"
 
-const Navmenu = () => {
+const Navmenu = ({ showProfile = false }) => {
 
     let bottomIconSize = 16
 
@@ -34,7 +34,7 @@ const Navmenu = () => {
         {
             title: "Profile",
             icon: icons.MdSupervisedUserCircle,
-            mobile: true,
+            mobile: false,
             size: bottomIconSize,
             link: "/dashboard/profile"
         }
@@ -47,23 +47,29 @@ const Navmenu = () => {
     return (
         <div className=" w-full md:w-2/6 lg:w-1/6 z-40 bg-white">
             <div className="fixed top-0 px-4 py-3 h-14 w-full md:w-2/6 lg:w-1/6 z-40 bg-white">
-                <Link href="/">
-                    <div className="flex flex-row cursor-pointer select-none">
-                        <div className="color=#f53131">
-                            <Image
-                                src="/logo-icon.png"
-                                width={35}
-                                height={35}
-                                alt=""
-                                className="rounded-full"
-                            />
+                <div className="flex flex-row justify-between items-center">
+                    <Link href="/">
+                        <div className="flex flex-row cursor-pointer select-none">
+                            <div className="color=#f53131">
+                                <Image
+                                    src="/logo-icon.png"
+                                    width={35}
+                                    height={35}
+                                    alt=""
+                                    className="rounded-full"
+                                />
+                            </div>
+                            <div className="flex flex-col text-xs ml-2 font-bold">
+                                <span className="text-blue-500 text-sm">IForex</span>
+                                <span className="text-gray-500">Your Trading Partner</span>
+                            </div>
                         </div>
-                        <div className="flex flex-col text-xs ml-2 font-bold">
-                            <span className="text-blue-500 text-sm">IForex</span>
-                            <span className="text-gray-500">Your Trading Partner</span>
-                        </div>
-                    </div>
-                </Link>
+                    </Link>
+                    {showProfile && <Link href="./dashboard/profile" className="flex md:hidden cursor-pointer">
+                        <icons.MdPerson size={25} />
+                    </Link>}
+                </div>
+
             </div>
 
             <div className=" 
@@ -77,7 +83,7 @@ const Navmenu = () => {
                     ))
                 }
 
-                <button className="hidden md:block" onClick={logoutClick}>
+                <button className="" onClick={logoutClick}>
                     <div className={`${"flex flex-col justify-center items-center py-2 md:flex-row md:justify-normal md:gap-2.5 md:p-4 md:m-2 md:rounded-lg"} `}>
 
                         <div>
