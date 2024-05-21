@@ -64,7 +64,7 @@ const Register = () => {
       setPopBtnVis(true)
 
     } catch (error) {
-      throw new Error(error)
+      
     }
   }
 

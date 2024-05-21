@@ -10,10 +10,10 @@ const RedirectPopup = ({ setPopupVis, isVisible, redirectLink, btnVisibility, ms
     if (!isVisible) return null;
 
     else return (
-        <div className="z-40 text-black fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center ">
-            <div className="bg-white py-10 px-20 rounded-lg flex flex-col items-center gap-4 justify-between">
+        <div className="z-40 text-black fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center text-center w-23">
+            <div className="bg-white py-10 px-20 rounded-lg flex flex-col items-center gap-4 justify-between max-w-[70%] lg:max-w-[40%]">
                 <h1 className="text-lg font-bold">{title}</h1>
-                <p>{msg}</p>
+                <p className="py-4">{msg}</p>
 
                 {btnVisibility && <button className="bg-blue-500 p-3 text-white w-2/3 rounded" onClick={handleClick}>{btnText}</button>}
             </div>

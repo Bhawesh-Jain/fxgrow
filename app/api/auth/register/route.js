@@ -19,7 +19,7 @@ export async function POST(request) {
         const user = await User.create(res)
 
         if (user) {
-            message = "Registration Successful"
+            message = "Thank you for applying for the membership to our site. We will review your details and send you an email letting you know whether your application has been successful or not."
             status = true
             data = user.toObject()
 

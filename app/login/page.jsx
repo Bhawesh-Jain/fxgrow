@@ -6,12 +6,14 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 
 const Login = () => {
    const [errorMsg, setErrorMsg] = useState("");
+   const [btn, setBtn] = useState(true);
 
    const handleOnChange = () => {
       setErrorMsg('')
    }
 
    const handleForm = async (formData) => {
+
       setErrorMsg("")
 
       const rawFormData = {
@@ -20,6 +22,7 @@ const Login = () => {
       }
 
       try {
+         setBtn(false)
          const res = await fetch(`${baseUrl}/api/auth/login`, {
             method: "POST",
             headers: {
@@ -35,10 +38,15 @@ const Login = () => {
                login(body.data)
             } else {
                setErrorMsg(body.message)
+               setBtn(true)
             }
+         } else {
+            setBtn(true)
          }
       } catch (error) {
-         throw new Error(error)
+         setErrorMsg(error)
+
+         setBtn(true)
       }
    }
 
@@ -91,7 +99,7 @@ const Login = () => {
                            </div>
 
                         </div>
-                        <button type="submit" className="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>
+                        {btn && <button type="submit" className="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Sign in</button>}
                         <p className="text-sm font-light text-gray-200 ">
                            Don't have an account yet? <Link href="/register" className="font-medium text-red-600 hover:underline ">Sign up</Link>
                         </p>
