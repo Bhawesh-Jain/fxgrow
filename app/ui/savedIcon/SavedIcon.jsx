@@ -18,7 +18,7 @@ const iconLibraries = {
   wi: () => import("react-icons/wi"),
 };
 
-const SavedIcon = ({ library, icon }) => {
+const SavedIcon = ({ library, icon, size = 50 }) => {
   const [IconComponent, setIconComponent] = useState(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const SavedIcon = ({ library, icon }) => {
     return <div>Loading...</div>;
   }
 
-  return <IconComponent size={50} />;
+  return <IconComponent size={size} />;
 };
 
 export default SavedIcon;

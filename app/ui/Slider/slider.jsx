@@ -1,22 +1,9 @@
-import Marquee from "./Marquee";
-import SliderItem from "./sliderItem";
+import SliderBody from "./sliderBody";
 
 export default function Slider() {
     return (
         <div className="w-full">
-            <Marquee speed={60}>
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-                <SliderItem />
-            </Marquee>
+            <SliderBody />
         </div>
     );
 }
