@@ -4,7 +4,7 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 
 
 const Aboutcontent = async () => {
-  const res = await fetch(`${baseUrl}/api/dashboard/about`, {
+  const res = await fetch(`${baseUrl}/api/dashboard/about/all`, {
     method: "GET",
     cache: "no-cache"
   });

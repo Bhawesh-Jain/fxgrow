@@ -2,7 +2,7 @@ import ServiceItem from "./serviceItem";
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001"
 
 const getServiceList = async () => {
-  const res = await fetch(`${baseUrl}/api/dashboard/service`, {
+  const res = await fetch(`${baseUrl}/api/dashboard/service/all`, {
     method: "GET",
     cache: "no-store",
     headers: {
